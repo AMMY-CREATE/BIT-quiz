@@ -1,0 +1,297 @@
+/* =====================================================
+   BIT Quiz - Global Stylesheet
+   ===================================================== */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* CSS Variables (Light Theme) */
+:root {
+    --primary:    #4f46e5;
+    --primary-h:  #4338ca;
+    --success:    #10b981;
+    --danger:     #ef4444;
+    --bg:         #f1f5f9;
+    --card:       #ffffff;
+    --text:       #1e293b;
+    --text-muted: #64748b;
+    --border:     #e2e8f0;
+    --shadow:     0 4px 24px rgba(0,0,0,0.08);
+    --radius:     14px;
+}
+
+/* Reset & Base */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* ─── Auth Container (Login Page) ─── */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.auth-container h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.5px;
+}
+
+.auth-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-form {
+    width: 100%;
+    max-width: 420px;
+}
+
+.auth-footer {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.auth-footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.success-msg {
+    width: 100%;
+    max-width: 420px;
+    padding: 0.75rem 1rem;
+    background: #d1fae5;
+    color: #065f46;
+    border-left: 4px solid var(--success);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.auth-container form,
+.auth-container .auth-form {
+    width: 100%;
+    max-width: 420px;
+    background: var(--card);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-top: 1.5rem;
+}
+
+/* ─── Form Inputs ─── */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #f8fafc;
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79,70,229,0.15);
+}
+
+/* ─── Button ─── */
+.btn {
+    width: 100%;
+    padding: 0.85rem;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(79,70,229,0.3);
+    letter-spacing: 0.3px;
+}
+
+.btn:hover  { background: var(--primary-h); box-shadow: 0 4px 14px rgba(79,70,229,0.4); }
+.btn:active { transform: scale(0.98); }
+
+/* ─── Error Message ─── */
+.error-msg {
+    width: 100%;
+    max-width: 420px;
+    padding: 0.75rem 1rem;
+    background: #fee2e2;
+    color: #991b1b;
+    border-left: 4px solid var(--danger);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ─── Timer Bar (top of quiz page) ─── */
+.timer-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: #e2e8f0;
+    z-index: 1000;
+}
+
+.timer-progress {
+    height: 100%;
+    width: 100%;
+    background: var(--primary);
+    transition: width 1s linear, background 0.5s;
+}
+
+/* ─── Quiz Header (Question # / Timer) ─── */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.timer-display {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.question-text {
+    margin: 1rem 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.btn-secondary {
+    background: #6b7280;
+}
+
+.btn-secondary:hover {
+    background: #4b5563;
+}
+
+.btn-success {
+    background: var(--success);
+}
+
+.btn-success:hover {
+    background: #059669;
+}
+
+/* ─── Quiz Layout ─── */
+.quiz-container {
+    max-width: 780px;
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+}
+
+/* ─── Question Card ─── */
+.question-card {
+    display: none;
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.3s ease;
+}
+
+.question-card.active { display: block; }
+
+.question-card h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+/* ─── Options Grid ─── */
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 520px) { .options-grid { grid-template-columns: 1fr; } }
+
+.option-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    background: #f8fafc;
+    transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+    user-select: none;
+}
+
+.option-btn:hover {
+    border-color: var(--primary);
+    background: #eef2ff;
+    box-shadow: 0 0 0 2px rgba(79,70,229,0.1);
+}
+
+.option-btn.selected {
+    border-color: var(--primary);
+    background: #eef2ff;
+    box-shadow: 0 0 0 3px rgba(79,70,229,0.2);
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* ─── Quiz Footer (Prev/Next/Submit buttons) ─── */
+.quiz-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.quiz-footer .btn {
+    width: auto;
+    min-width: 110px;
+}
+
+/* ─── Fade-in animation ─── */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,2 @@
+# Load index.php when visiting the directory
+DirectoryIndex index.php

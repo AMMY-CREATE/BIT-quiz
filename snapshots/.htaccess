@@ -1,0 +1,3 @@
+# Prevent direct access - snapshots served only via get_snapshot.php (admin)
+Order Deny,Allow
+Deny from all
